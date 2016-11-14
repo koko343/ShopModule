@@ -13,6 +13,12 @@ namespace ShopModule.Core.Entities
 
         public int PictureId { get; set; }
 
+        [ForeignKey("PictureId")]
+        public virtual Picture Picture { get; set; }
+
         public int CategoryId { get; set; }
+
+        [ForeignKey("CategoryId")]
+        public virtual Category Category { get; set; }
     }
 }

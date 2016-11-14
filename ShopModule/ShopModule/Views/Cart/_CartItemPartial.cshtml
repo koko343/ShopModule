@@ -1,0 +1,23 @@
+﻿@model ShopModule.Models.Shopping.CartItemViewModel
+
+<div class="row cart-item">
+    <div class="col-lg-3 col-md-3 col-sm-3 imgCartItem" style="background-image:url(@Model.Picture.Url)">
+
+    </div>
+    <div class="col-lg-9 col-md-9 col-sm-9 contCartItem">
+        <table>
+            <tr>
+                <td class="cartItemName">@Model.Name</td>
+            </tr>
+            <tr>
+                <td>@Model.Description</td>
+            </tr>
+            <tr>
+                <td>
+                    <div class="cartItemPrice">Price : @Model.Price $</div>
+                    <div class="remove-from-cart"><a href="@Url.Action("RemoveFromCart", "Cart", new { id = Model.ProductId })">Remove Item</a></div>
+                </td>
+            </tr>
+        </table>
+    </div>
+</div>

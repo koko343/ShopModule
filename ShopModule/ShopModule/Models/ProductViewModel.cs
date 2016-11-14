@@ -20,5 +20,9 @@ namespace ShopModule.Models
         public string Category { get; set; }
 
         public IEnumerable<Category> CategoryItems { get; set; }
+
+        public bool IsBought { get; set; }
+
+        public Picture Picture { get; set; }
     }
 }

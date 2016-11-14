@@ -1,7 +1,45 @@
-﻿
+﻿@model IEnumerable<ShopModule.Models.ProductViewModel>
 @{
     ViewBag.Title = "Home";
 }
 
-<h2>Home</h2>
+@section Header{
+    <link href="~/Content/index.css" rel="stylesheet" />
+}
 
+@section Body{
+    <div id="presonal-list">
+        @for (int i = 0; i < Model.Count() + 1; i += 3)
+    {
+            <div class="row">
+                <div class="col-md-10 col-md-offset-1">
+                    @foreach (var item in Model.Skip(i).Take(3))
+                    {
+                        <div class="col-md-4 col-sm-3  col-xs-4 item-main-page">
+                            <div class="image-hover">
+                                <div class="image" style="background-image:url(@item.Picture.Url)">
+                                    <div class="overlay">
+                                        <span class="name">@item.Name</span>
+                                        <span class="price">USD @item.Price</span>
+                                    </div>
+                                </div>
+                            </div>
+                            @if (item.IsBought == false)
+                            {
+                                <a href="@Url.Action("AddToCart", "Cart", new { id = item.Id })">
+                                    <div class="add-to-cart">
+                                        Add to Cart
+                                    </div>
+                                </a>
+                            }
+                            else
+                            {
+                                <div class="col-md-12 col-xs-12 product-added">Product added to cart</div>
+                            }
+                        </div>
+                    }
+                </div>
+            </div>
+        }
+    </div>
+}

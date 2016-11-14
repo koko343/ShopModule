@@ -1,0 +1,34 @@
+﻿@model ShopModule.Models.Shopping.CartViewModel
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    <link href="~/Content/cart.css" rel="stylesheet" />
+}
+
+@section Header{
+    <link href="~/Content/cart.css" rel="stylesheet" />
+}
+
+@section Body{
+    <div class="row row-wrapper">
+        <div class="col-md-8 col-md-offset-2 cart-body">
+            @foreach (var item in Model.CartList)
+            {
+                @Html.Partial("_CartItemPartial", item)
+            }
+        </div>
+
+        <div class="col-md-12 col-xs-12 checkout-block">
+            <div class="col-md-6 col-sm-4 hidden-xs"><div class="clear-cart"><a href="@Url.Action("ClearCart", "Cart")">Clear All</a></div></div>
+            <div class="col-md-6 col-sm-8 col-xs-12 checkout-btm-margin">
+                <div class="col-md-6 col-sm-6 col-xs-12 total-sum">Total : @Model.Total $</div>
+                <div class="col-md-6 col-sm-6 col-xs-12 float-submit">
+                    <input type="submit" value="Checkout" class="checkout-btn" />
+                </div>
+            </div>
+        </div>
+    </div>
+}
+
+

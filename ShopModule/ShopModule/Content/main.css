@@ -1,0 +1,95 @@
+﻿body {
+    margin: 0;
+    padding: 0;
+}
+
+.navbar {
+    border: none;
+    margin: 0;
+    padding: 0;
+}
+
+.navbar-toggle {
+    border: none;
+    float: left;
+    margin-left: 3%;
+}
+
+.navbar-default {
+    background-color: white;
+}
+
+.nav-top {
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.navbar-default .navbar-nav > li > a {
+    color: black;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 600;
+}
+
+.navbar-inverse .navbar-nav > li > a {
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 600;
+}
+
+.navbar-default .navbar-toggle .icon-bar {
+    background-color: black;
+}
+
+.navbar-default .navbar-text {
+    color: black;
+}
+
+.navbar-default .navbar-toggle:hover,
+.navbar-default .navbar-toggle:focus {
+    background-color: white;
+}
+
+.navbar-collapse {
+    text-align: center;
+}
+
+.navbar-default .navbar-collapse {
+    border: none;
+}
+
+.logo-text {
+    text-decoration: none;
+    color: black;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-weight: 600;
+}
+
+.logo-style {
+    width: 100%;
+    text-align: center;
+}
+
+    .logo-style a:hover {
+        text-decoration: none;
+    }
+
+.wrapper {
+    width: 100%;
+    text-align: center;
+}
+
+@media (min-width:1027px) {
+    .navbar .navbar-nav {
+        display: inline-block;
+        float: none;
+        vertical-align: top;
+    }
+
+    .navbar .navbar-collapse {
+        text-align: center;
+    }
+
+    .footer {
+        margin-top: 30px;
+    }
+}

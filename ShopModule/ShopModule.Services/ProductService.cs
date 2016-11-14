@@ -10,7 +10,9 @@ namespace ShopModule.Services
 {
     public class ProductService
     {
+        //Product repository
         private IRepository<Product> productRepository;
+        //Context for db
         private DataContext context;
 
         public ProductService()
@@ -19,11 +21,13 @@ namespace ShopModule.Services
             this.productRepository = new Repository<Product>(this.context);
         }
 
+        //Get all Product from db
         public List<Product> GetAll()
         {
             return this.productRepository.GetAll().ToList<Product>();
         }
 
+        //Add new Product
         public bool AddProduct(string name, decimal price, string description, string categoryId, int pictureId)
         {
             if(Convert.ToInt32(categoryId) != 0 && pictureId != 0)
@@ -46,11 +50,13 @@ namespace ShopModule.Services
             return false;
         }
 
+        //Get product from db by id
         public Product GetById(int id)
         {
             return this.productRepository.GetById(id);
         }
 
+        //Edit product
         public bool EditProduct(int id, string name, decimal price, string description, string categoryId, int pictureId)
         {
             if (id != 0 && pictureId != 0)
@@ -70,6 +76,7 @@ namespace ShopModule.Services
             return false;
         }
 
+        //Delete Product
         public void DeleteProduct(int id)
         {
             if(id!=0)
