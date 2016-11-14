@@ -2,7 +2,7 @@
 using System.Diagnostics;
 using System.Web.Mvc;
 
-namespace ShopModule.Infrastructure
+namespace Mvc_5_Empty_Template1.Infrastructure
 {
     /// <summary>
     /// Apply this attribute to controller actions to log the exception via Trace.
@@ -24,13 +24,6 @@ namespace ShopModule.Infrastructure
                 if (filterContext.Exception != null)
                 {
                     Trace.TraceError(filterContext.Exception.ToString());
-                    var val = filterContext.Exception.ToString();
-
-                    filterContext.Result = new ViewResult
-                    {
-                        ViewName = "Error",
-                        ViewData = new ViewDataDictionary<string>(val)
-                    };
                 }
                 filterContext.ExceptionHandled = true;
             }

@@ -1,0 +1,22 @@
+﻿@model string
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Error</title>
+</head>
+<body>
+    <h2>Извините</h2>
+    <span>
+        <b>@Model</b>
+    </span>
+    <div>
+        @Html.ActionLink("Вернуться на главную", "Index")
+    </div>
+</body>
+</html>

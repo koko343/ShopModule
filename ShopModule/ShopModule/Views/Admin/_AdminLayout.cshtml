@@ -1,0 +1,22 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+    <link rel="stylesheet" href="~/Content/bootstrap.min.css" />
+</head>
+<body>
+    <div class="container-fluid">
+        <div class="row">
+            <h2>Admin Panel</h2> | @Html.ActionLink("Logout", "Logout", "Admin")
+            <div class="col-md-12 admin-header">
+                @Html.ActionLink("CreateProduct", "CreateProduct", "Admin") | @Html.ActionLink("CreateCategory", "CreateCategory", "Admin")
+            </div>
+        </div>
+        @RenderSection("Body")
+    </div>
+
+    @RenderSection("scripts", false)
+</body>
+</html>
